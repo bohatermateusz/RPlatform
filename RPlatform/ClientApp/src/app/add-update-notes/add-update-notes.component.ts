@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-update-notes',
@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-update-notes.component.sass']
 })
 export class AddUpdateNotesComponent implements OnInit {
-
-  constructor() { }
+  @Output() noteCreated = new EventEmitter<any>();
+  @Input() note: any;
+  constructor() { this.clearNotes(); }
 
   ngOnInit(): void {
   }
+
+  //Create an empty note object
+  private clearNotes = function () {
+    this.note = {
+      id: undefined,
+      title: '',
+      description: ''
+    };
+  };
+
+  public addUpdateNote = function (event) {
+    this.noteCreated.emit(this.note);
+    this.clearNotes();
+  }
+
 
 }
