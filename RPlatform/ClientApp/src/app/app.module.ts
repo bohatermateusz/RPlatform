@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { NotesListingComponent } from './notes-listing/notes-listing.component';
+import { AddUpdateNotesComponent } from './add-update-notes/add-update-notes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotesListingComponent,
+    AddUpdateNotesComponent
   ],
   imports: [
     BrowserModule,
