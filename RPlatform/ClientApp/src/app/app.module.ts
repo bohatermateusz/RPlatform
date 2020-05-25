@@ -4,6 +4,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+<<<<<<< Updated upstream
+=======
+import { NotesListingComponent } from './notes-listing/notes-listing.component';
+import { AddUpdateNotesComponent } from './add-update-notes/add-update-notes.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NotesService } from './notes-service.service';
+
+const appRoutes: Routes = [
+  { path: '', component: AppComponent }
+];
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -11,11 +23,13 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
