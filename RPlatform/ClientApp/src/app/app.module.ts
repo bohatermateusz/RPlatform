@@ -1,3 +1,4 @@
+import { HttpService } from './http.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
